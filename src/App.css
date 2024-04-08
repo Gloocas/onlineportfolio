@@ -37,6 +37,11 @@ p.success {
   color: green;
 }
 
+/*NavBar CSS */
+
+
+
+
 nav.navbar {
   padding: 18px 0;
   position: fixed;
@@ -46,12 +51,8 @@ nav.navbar {
   transition: 0.32 ease-in-out;
 }
 
-nav.navbar.scrolled {
-  padding: 0px 0;
-  background-color: #121212;
-}
 
-nav.navbar .navbar-nav .nav-link.navbar-link {
+nav.navbar .nav-link.navbar-link {
   font-weight: 400;
   color: #fff !important;
   letter-spacing: 0.8px;
@@ -64,8 +65,8 @@ nav.navbar a.navbar-brand {
   width: 9%;
 }
 
-nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
-nav.navbar .navbar-nav a.nav-link.navbar-link.active {
+nav.navbar a.nav-link.navbar-link:hover,
+nav.navbar a.nav-link.navbar-link.active {
   opacity: 1;
 }
 
@@ -90,22 +91,9 @@ span.navbar-text {
   justify-content: center;
   line-height: 1;
   border: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-.social-icon a before:: {
-  content: "";
-  width: 42px;
-  height: 42px;
-  position: absolute;
-  background-color: #ffffff;
-  border-radius: 50%;
-  transform: scale(0);
   transition: 0.3s ease-in-out;
 }
 
-.social-icon a :hover::before {
-  transform: scale(1);
-}
 
 .social-icon a img {
   width: 40%;
@@ -113,8 +101,9 @@ span.navbar-text {
   transition: 0.3s ease-in-out;
 }
 
-.social-icon a:hover img {
-  filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg)
+.social-icon a:hover  {
+  background-color: white;
+  transition: 0.3s ease-in-out;
 }
 
 .navbar-text button {
@@ -127,6 +116,157 @@ span.navbar-text {
   position: relative;
   background-color: transparent;
   transition: 0.3s ease-in-out;
+}
+
+.navbar-text button span {
+  z-index: 1;
+}
+
+.navbar-text button:hover {
+  color: black;
+}
+
+.navbar-text button::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+}
+
+.navbar-text button:hover::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+@media screen and (max-width: 770px) {
+  .container {
+    flex-direction: column;
+    row-gap: 25px;
+  }
+
+  .title {
+    display: none;
+  }
+}
+
+
+/* Banner CSS */
+
+.banner {
+  margin-top: 0;
+  padding: 260px 0 100px 0;
+  /*background-image:*/
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.leftText {
+  min-height: 173px;
+}
+
+.tagline {
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  padding: 8px 10px;
+  background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5));
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.banner h1 {
+  font-size: 65px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.banner p {
+  color: #B8B8B8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  width: 96%;
+}
+
+.banner button {
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 60px;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+}
+
+.banner button svg {
+  font-size: 25px;
+  margin-left: 10px;
+  transition: 0.3s ease-in-out;
+  line-height: 1;
+}
+
+.banner button:hover svg {
+  margin-left: 25px;
+}
+
+.banner img {
+  animation: updown 3s ease-in-out infinite;
+
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+
+/* Skills CSS */
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-direction: row;
+  margin-top: 250px;
+  row-gap: 10px;
+}
+
+.flex div {
+  height: 100px;
+  width: 100px;
+  border: solid 3px rgb(92, 168, 255);
+  /* padding: 50px; */
+}
+
+.flex div img {
+  display: block;
+  height: 100px;
+  width: 100px;
+  background-size: 100px 100px;
+  /* padding: 50px; */
+}
+
+.txt-rotate > .wrap {
+  border-right: 0.08em solid #666;
 }
 
 .App {

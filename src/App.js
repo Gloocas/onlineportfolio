@@ -1,19 +1,17 @@
 import logo from './logo.svg';
-import './App.css';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom" 
-import Home from './components/Home'
-import Projects from './components/Projects'
+import './App.css'
+import  { NavBar } from './components/NavBar.js'
+import { Banner } from './components/Banner.js'
+import { Skills } from './components/Skills.js'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 function App() {
   return (
     <div className="App">
-      yo
-   <Router>
-    <Routes>
-      <Route path = "/" element ={<Home />}/>
-      <Route path = "/projects" element ={<Projects />}/>
-    </Routes>
-   </Router>
+      <NavBar/>
+      <Banner/>
+      <Skills/>
     </div>
   );
 }
