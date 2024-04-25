@@ -2,8 +2,11 @@ import { useState, useEffect } from 'react';
 import Nav from "react-bootstrap/Nav";
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
-import logo from "./logo.svg";
+import logo from "../images/logo.svg"
 import NavLink from 'react-bootstrap/esm/NavLink';
+import handshake from "../images/handshake.png"
+import twitch from "../images/twitch.png"
+import twitter from "../images/twitter.png"
 
 
 
@@ -86,16 +89,16 @@ export const NavBar = () => {
                 <NavLink href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</NavLink>
 
                 </Nav> 
-                <span className="title">My Shitty Website</span>
+                <span className="title">Under Construction</span>
                 <span className="navbar-text">
                     <div className="social-icon">
-                        <a href="https://www.youtube.com/channel/UCR7po0qHbBrM2zYomXYzNKg"><img src={logo} alt="" /></a>
+                        <a href="https://virginia.joinhandshake.com/stu/users/41839122"><img src={handshake} alt="" /></a>
 
-                        <a href="https://twitch.tv/MajorGluke"><img src={logo} alt="" /></a>
+                        <a href="https://twitch.tv/MajorGluke"><img src={twitch} alt="" /></a>
 
-                        <a href="https://twitter.com/Gloocas"><img src={logo} alt="" /></a>
+                        <a href="https://twitter.com/Gloocas"><img src={twitter} alt="" /></a>
                     </div>
-                    <button className="vvd" onClick={() => console.log('connect', scrolled)}> <span>Contact</span></button>
+                    <button className="vvd" onClick={() => window.open('mailto:lukiewebb@hotmail.com')}> <span>Contact</span></button>
                 </span>
             </Container>
         </Navbar>

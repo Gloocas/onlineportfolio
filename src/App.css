@@ -49,6 +49,7 @@ nav.navbar {
   top: 0;
   z-index: 9;
   transition: 0.32 ease-in-out;
+  background: linear-gradient( rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .85) 50%, rgba(0, 0, 0, .7) 75%, rgba(0, 0, 0, .55) 100%);
 }
 
 
@@ -176,9 +177,6 @@ span.navbar-text {
   font-weight: 700;
   letter-spacing: 0.8px;
   padding: 8px 10px;
-  background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5));
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  font-size: 20px;
   margin-bottom: 16px;
   display: inline-block;
 }
@@ -192,12 +190,11 @@ span.navbar-text {
   display: block;
 }
 
-.banner p {
+.banner span {
   color: #B8B8B8;
-  font-size: 18px;
+  font-size: 30px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
-  width: 96%;
 }
 
 .banner button {
@@ -226,6 +223,39 @@ span.navbar-text {
 
 }
 
+.updating {
+  animation: fadeOut 1s ease-in-out;
+}
+
+.finished {
+  animation: fadeIn 1s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @keyframes updown {
   0% {
     transform: translateY(-20px);
@@ -251,11 +281,21 @@ span.navbar-text {
 }
 
 .flex div {
+
   height: 100px;
   width: 100px;
-  border: solid 3px rgb(92, 168, 255);
   /* padding: 50px; */
 }
+
+.activeSkill {
+  animation: updownSkills 3s infinite ease-in-out;
+}
+
+.pausedSkill {
+  animation: updownSkills 3s infinite ease-in-out;
+  animation-play-state: paused;
+}
+
 
 .flex div img {
   display: block;
@@ -264,6 +304,39 @@ span.navbar-text {
   background-size: 100px 100px;
   /* padding: 50px; */
 }
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.skills span {
+  font-size: 60px;
+}
+
+.skills p {
+  white-space: pre-line;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+
+@keyframes updownSkills {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+
 
 .txt-rotate > .wrap {
   border-right: 0.08em solid #666;

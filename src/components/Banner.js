@@ -2,17 +2,21 @@ import { useState, useEffect } from 'react';
 import Col from "react-bootstrap/Col";
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
-import logo from "./logo.svg";
+import logo from "../images/logo.svg";
+import {curImage} from "./Skills.js"
+
+var textRotation = [ "Game Developer ", "Pixel Artist ", "Soundtrack Composer "];
+export {textRotation}
 
 
-
-export const Banner = () => {
+export const Banner = (props) => {
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
-    const textRotation = [ "manic", "is a", "bitch"];
     const [text, setText] = useState('');
     const [delta, setDelta] = useState(300 - Math.random() * 100);
-    const period = 1000;
+    const period = 500;
+
+    const ImageUpdating = props.ImageUpdating
 
     useEffect(() => {
         let ticker = setInterval(() => {
@@ -32,7 +36,7 @@ export const Banner = () => {
         setText(updatedText);
         
         if (isDeleting)  {
-            setDelta(prevDelta => prevDelta / 2);
+            setDelta(prevDelta => prevDelta / 1.2);
         }
 
         if (!isDeleting && updatedText === fullText) {
@@ -52,11 +56,10 @@ export const Banner = () => {
             <Container>
                 <Row className="align-items-center">
                     <Col xs={12} md={6} xl={7} className="leftText">
-                        <span className="tagline">DUMMIFIED DIMMSDALE DIMMA DUMMY</span>
-                        <h1>test</h1> <span className="wrap">{text}</span>
+                        <h1 className='tagline'>Hi, I'm Luke</h1> <span className={ImageUpdating ? 'updating' : 'finished'}>{text}</span>
                     </Col>
-                    <Col xs={12} md={6} xl={5}>
-                        <img src={logo} alt="header img"></img>
+                    <Col xs={12} md={6} xl={5} className={ImageUpdating ? 'updating' : 'finished'}>
+                        <img src={curImage} alt="header img"></img>
                     </Col>
                 </Row>
             </Container>
